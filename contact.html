@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+</head>
+<body>
+    <div class=toggle onclick="toggleMenu();"></div>
+    <section>
+        <div class="link">
+            <div class="gcard">
+                <div class="gc_img">
+                    <img src="contact.jpg">
+                </div>
+                <div class="gc_content">
+                    <div class="details">
+                        <h3>Hoang Ngoc Bao<br><span>Front End Designer</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1"><a href="https://www.facebook.com/lostmarry"><i class="fab fa-facebook-f"></i></a></li>
+                        <li style="--i:2"><a href="https://github.com/bao20184046"><i class="fab fa-github"></i></a></li>
+                        <li style="--i:3"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2>Contact Me:</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="inputbox">
+                        <input type="text" name="" required="required">
+                        <span class="text">First Name</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="inputbox">
+                        <input type="text" name="" required="required">
+                        <span class="text">Last Name</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="inputbox">
+                        <input type="text" name="" required="required">
+                        <span class="text">Email</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="inputbox textarea">
+                        <textarea required="required    "></textarea>
+                        <span class="text">Type Your Message Here...</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="send">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="sidebar">
+        <ul class="menu">
+            <li><a href="index.html" data-text="HOME">HOME</a></li>
+            <li><a href="myproject.html" data-text="PROJECT">PROJECT</a></li>
+            <li><a href="contact.html" data-text="CONTACT ME">CONTACT</a></li>
+        </ul>
+    </div>
+    <script>
+        function toggleMenu()
+        {
+            const menuToggle = document.querySelector('.toggle');
+            const sidebar = document.querySelector('.sidebar');
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

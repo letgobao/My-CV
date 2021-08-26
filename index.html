@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./main.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+</head>
+<body>
+    <div class=toggle onclick="toggleMenu();"></div>
+    <section class="banner" id="home">
+        <div class="imgSidebar">
+            <img src="myimg.jpg">
+        </div>
+        <div class="contentbox">
+            <h5 class="logo"><span>My_Profile</span></h5>
+            <div>
+                <h4><span>Hello</span>. I'm</h4>
+                <!-- <h2>Hoang Ngoc Bao</h2> -->
+                <div class="Name">
+                    <div class="name n1">Hoang Ngoc Bao</div>
+                    <div class="name n2">Hoang Ngoc Bao</div>
+                    <div class="name n3">Hoang Ngoc Bao</div>
+                    <div class="name n4">Hoang Ngoc Bao</div>
+                    <div class="name n5">Hoang Ngoc Bao</div>
+                    <div class="name n6">Hoang Ngoc Bao</div>
+                </div>
+                <h4>I'm a Front End Web Developer.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odit debitis odio itaque animi officiis, dolorem deleniti, consequatur eum qui, minus accusamus. Rem eos doloremque alias quo repellendus laborum cumque.
+                Id nostrum eaque aperiam nisi atque, explicabo quam recusandae iusto magni officia omnis veritatis quos cum dolorem consectetur iure eius nobis illum quas, fugit ratione! Sint assumenda consectetur quia ipsa?</p>
+                <a href="#about" class="btn">About Me</a>
+            </div>
+        </div>
+        <ul></ul>
+    </section>
+    <section class="about" id="about">
+        <div class="title while">
+            <h2>About Me</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur</p>
+        </div>
+        <div class="content">
+            <div class="textbox">
+                <p>My name is Tran Quoc Du. Currently I am 21 years old and am a 3rd year student of Information Technology Faculty of Hanoi University of Science and Technology. I can communicate in both English and Japanese. I orient myself
+                     to be a front-end developer, I have basic knowledge of HTML5, CSS3, JAVASCRIPT and have proficiently used ReactJS library.<br>My hobbies are music and fashion. When I was a kid, I dreamed of becoming a producer of electronic
+                     music. But when I was growing up, I realized that I had no talent for composing music and turned to programming. I am building a website that allows users to freely share music, also partly to satisfy my passion.</p>
+                <div class="goback"><a href="#home">Go Back</a></div>
+            </div>
+            <div class="imgbox">
+                <img src="img.jpg">
+            </div>
+        </div>
+    </section>
+    <div class="sidebar">
+        <ul class="menu">
+            <li><a href="index.html" data-text="HOME">HOME</a></li>
+            <li><a href="myproject.html" data-text="PROJECT">PROJECT</a></li>
+            <li><a href="contact.html" data-text="CONTACT ME">CONTACT</a></li>
+        </ul>
+    </div>
+    <script>
+        function toggleMenu()
+        {
+            const menuToggle = document.querySelector('.toggle');
+            const sidebar = document.querySelector('.sidebar');
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".imgSidebar"), {
+		max: 10,
+		speed: 400,
+	});
+    </script>  
+</body>
+</html>

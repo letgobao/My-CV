@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(bg.jpg);
+}
+.toggle
+{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    background: #000 url(menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index:1000;
+}
+.toggle.active
+{
+    background: #000 url(close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+section
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+.sidebar
+{
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 40px;
+    z-index: 100;
+    right: -100%;
+    overflow: hidden;
+}
+.sidebar ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar.active
+{
+    right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.sidebar ul li
+{
+    list-style: none;
+}
+.sidebar ul li a
+{
+    position: relative;
+    display: block;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    margin: 10px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.sidebar ul li a:hover
+{
+    color: rgba(255,255,255,0.1);
+}
+.sidebar ul li a::before
+{
+    content: attr(data-text);
+    position: absolute;
+    font-size: 0.35em;
+    color: #3bffe8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 0 0 10px #3bffe8,
+    0 0 30px #3bffe8,
+    0 0 80px #3bffe8;
+    font-weight: 800;
+    letter-spacing: 30px;
+    white-space: nowrap;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.sidebar ul li a:hover::before
+{
+    opacity: 1;
+    letter-spacing: 6px;
+}
+.link
+{
+    width: 35%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.gcard
+{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gcard .gc_content
+{
+   position: absolute;
+   bottom: -160px;
+   width: 100%;
+   height: 160px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+   flex-direction: column;
+   backdrop-filter: blur(15px);
+   box-shadow: 0 -10px 10px rgba(0,0,0,0.1);
+   border: 1px solid rgba(255,255,255,0.2);
+   transition: bottom 0.5s;
+   /* transition-delay: 0.8s; */
+}
+.gcard:hover .gc_content
+{
+    bottom: 0px;
+    transition-delay: 0.3s;
+}
+.gcard .gc_content .details h3
+{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-delay: 0.6s;
+}
+.gcard:hover .gc_content .details h3
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.gcard .gc_content .details h3 span
+{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+
+}
+.gcard .gc_content .sci
+{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+}
+.gcard .gc_content .sci li
+{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.2s * var(--i));
+}
+.gcard:hover .gc_content .sci li
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.gcard .gc_content .sci li a
+{
+    color: #fff;
+    font-size: 24px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1.5em;
+    color:#444;
+    text-decoration: none;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    transition: 0.5s;
+}
+.sci li a:hover
+{
+    background: #03a9f4;
+    color: #fff;
+    transform: scale(1.5) translateY(-6px);
+}
+.container
+{
+    position: relative;
+    z-index: 100;
+    width: 60%;
+    padding: 50px;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+}
+.container h2
+{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.container .row
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.container .row .col
+{
+    position: relative;
+    width: 95%;
+    height: 40px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.container .row .col .inputbox textarea,
+.container .row .col .inputbox input
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+.container .row .col .inputbox .text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.container .row .col .inputbox input:focus + .text,
+.container .row .col .inputbox input:valid + .text,
+.container .row .col .inputbox textarea:focus + .text,
+.container .row .col .inputbox textarea:valid + .text
+{
+    top: -35px;
+    left: -10px;
+}
+.container .row .col .inputbox .line
+{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 4px;
+    pointer-events: none;
+}
+.container .row .col .inputbox input:focus ~ .line,
+.container .row .col .inputbox input:valid ~ .line
+{
+    height: 110%;
+}
+.container .row .col .inputbox.textarea
+{
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+.container .row .col .inputbox textarea:focus ~ .line,
+.container .row .col .inputbox textarea:valid ~ .line
+{
+    height: 100%;
+}
+.container .row .col input[type="submit"]
+{
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+}
